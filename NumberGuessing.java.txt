@@ -1,0 +1,76 @@
+import java.util.*;
+public class NumberGuessing {
+	public static void main(String[] args) {
+		System.out.println(Character.toString(128_591)+"Welcome to GTN Game! Before enter into this game you are having one Instruction");
+		Number n=new Number();
+	}
+}
+
+class Number
+{
+	public Number()
+	{
+		int round=0;
+		while(round!=999)
+		{
+		Scanner s=new Scanner(System.in);
+		
+		Random r=new Random();
+		int RandomNumber=r.nextInt(100);
+		int chance=3;
+		int n=4;
+		int score=0;
+		System.out.println();
+		
+		System.out.println();
+		System.out.println("**You are Having only 3 chances to guess the number**");
+		System.out.println();
+		System.out.println("Enter a Number between 1-100..");
+		for(int i=0;i<n&&chance>0;i++,--chance)
+		{
+			int UserNumber=s.nextInt();
+		
+		if(UserNumber==RandomNumber)
+		{
+			System.out.println(Character.toString(128_526)+"Yippee!, Your Guess is Correct");
+			score=score+1;
+			System.out.println("You are score is "+ score);
+		}
+		else if(UserNumber<RandomNumber)
+		{
+			System.out.println();
+			System.out.println("Your Guess is low"+Character.toString(128_577));
+			if(chance!=0)
+			{
+				System.out.println("You are Having "+(chance-1)+" Chances");
+			}
+			
+		}
+		else if(UserNumber>RandomNumber) {
+			System.out.println();
+			System.out.println("Your Guess is high"+Character.toString(128_558));
+			if(chance!=0)
+			{
+				System.out.println("You are Having "+(chance-1)+" Chances");
+			}
+			
+		}		
+		}
+		System.out.println();
+
+		if(chance==0&&score==0||score==1)
+		{
+			System.out.println(Character.toString(128_531)+"Oops! You Loss the Game");
+			System.out.println("The RandomNumber is: "+RandomNumber);
+			System.out.println("Your score is : "+score);
+			System.out.println();
+			System.out.println("-----------D-E-V-E-L-O-P-E-D----B-Y----B-A-L-A-J-I--R-------------");
+		    System.out.println();
+			System.out.println(Character.toString(128_519)+"If you want to Continue the game enter any number,else enter 999");
+            
+			round=s.nextInt();
+		}
+		
+		}
+	}
+}
