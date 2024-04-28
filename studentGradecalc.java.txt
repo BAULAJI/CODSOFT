@@ -1,0 +1,59 @@
+import java.util.*;
+public class GradeCalc {
+	public static void main(String args[]) {
+		 Grade g=new Grade();
+	}
+  
+}
+class Grade
+{
+	public Grade()
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the Number of Subjects: ");
+		int n=s.nextInt();
+		System.out.println("Enter the Marks in each subject out of 100: ");
+		int a[]=new int[n];
+		for(int i=0;i<n;i++)
+		{
+			a[i]=s.nextInt();
+		}
+		int sum=0;
+		for(int i=0;i<n;i++)
+		{
+			sum=sum+a[i];
+		}
+		int avg=sum/n;
+		char grade;
+		if(avg>=90)
+		{
+			grade='A';
+		}
+		else if(avg>=80&&avg<90)
+		{
+			grade='B';
+		}
+		else if(avg>=70&&avg<80)
+		{
+			grade='C';
+		}
+		else if(avg>=60&&avg<70)
+		{
+			grade='D';
+		}
+		else if(avg>=50&&avg<60)
+		{
+			grade='E';
+		}
+		else
+		{
+			grade='F';
+		}
+		System.out.println("TOTAL MARKS : "+sum);
+		System.out.println("AVERAGE : "+avg);
+		System.out.println("GRADE : "+grade);
+		System.out.println();
+		System.out.println("------Developed-by---Balaji-R-------");
+		s.close();
+	}
+}
