@@ -1,0 +1,66 @@
+import java.util.*;
+public class ATMMachine {
+
+	public static void main(String args[])
+	{
+		ATM a=new ATM();
+		Scanner t=new Scanner(System.in);
+		int op=0;
+		
+		while(op!=999)
+		{
+			System.out.println("Enter 1 for Withdraw");
+			System.out.println("Enter 2 for Balance");
+			System.out.println("Enter 3 for deposit");
+			System.out.println("If you want to close the transaction enter 999");
+			System.out.println();
+
+		op=t.nextInt();
+		a.AccountDetail(op);
+		}
+		t.close();
+	}
+}
+class ATM
+{
+	Scanner s=new Scanner(System.in);	
+	static long amount=50000;
+	void AccountDetail(int op)
+	{
+	   switch(op)
+	   {
+	   	case 1:
+	   	{
+	   		System.out.println("Enter the Amount you want to Withdraw: ");
+		    long am=s.nextLong();
+		    if(amount<am)
+		    {
+		    	System.out.println("!! Insufficient Balance");
+		    	System.out.println();
+		    }
+		    else
+		    amount=amount-am;
+		    System.out.println("Thank you for banking with us!");
+			System.out.println();
+		    break;
+	   	}
+	   	case 2:
+	   	{
+	   		System.out.println("Your remaining balance is: "+amount);
+	   		System.out.println();
+	   		break;
+	   	}
+	   	case 3:
+	   	{
+	   		System.out.println("Enter the Amount to deposit: ");
+	   		long dep=s.nextLong();
+	   		amount=amount+dep;
+	   		System.out.println("Now, the Total amount in your Account is: "+amount);
+	   		System.out.println();
+	   		break;
+	   	}
+	   	default :{System.out.println("-----Developed--By--Balaji-R------");};
+	   }
+	}
+	
+}
